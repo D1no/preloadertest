@@ -12,9 +12,9 @@ Router.configure({
 	miro:preloader preload router extension
 */
 	preload: {
-		'sync': {
+		sync: {
 			'default': {
-				'js'     : 'externaljs.js'
+				'js'     : '/external.js'
 			}
 		}
 	}
