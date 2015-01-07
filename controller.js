@@ -2,24 +2,26 @@
  * Created by AProDino on 26.12.14.
  */
 
-HomeController = RouteController.extend({
-	waitOn: function () {
-		return [Meteor.subscribe("articles")];
-	},
-	data: function () {
-		return  {
-			articles: Articles.find()
-		};
-	},
-	  preload: {
-		  'sync': {
-            'default': {
-                'js'     : '/externaljs.js'
-            }
-        }
-	  }
-});
-
+if ( Meteor.isClient ) {
+	// HomeController = RouteController.extend({
+	HomeController = PreloadController.extend({
+		waitOn: function () {
+			return [Meteor.subscribe("articles")];
+		},
+		data: function () {
+			return  {
+				articles: Articles.find()
+			};
+		},
+		preload: {
+			'sync': {
+				'default': {
+					'js'     : '/externaljs.js'
+				}
+			}
+		}
+	});
+}
 
 ArticleShowController = RouteController.extend({
 	subscriptions: function () {
