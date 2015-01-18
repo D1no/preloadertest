@@ -8,6 +8,6 @@ meteor-platform
 insecure
 iron:router
 miro:preloader
-accounts-ui
-accounts-password
 bootstrap
+accounts-password
+accounts-ui

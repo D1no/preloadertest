@@ -1,0 +1,4 @@
+.DS_Store
+.meteor*
+.build*
+packages/
